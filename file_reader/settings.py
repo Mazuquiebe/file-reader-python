@@ -30,9 +30,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.get_env('DEBUG', False)
+DEBUG = os.getenv('DEBUG', False)
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = [
+    'https://cnab-reader.onrender.com', 
+    '0.0.0.0',
+]
 
 RENDER_EXTERNAL_HOSTNAME = os.getenv("RENDER_EXTERNAL_HOSTNAME")
 if RENDER_EXTERNAL_HOSTNAME:
